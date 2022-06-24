@@ -1,4 +1,4 @@
-# Taxon-NER
+# Taxon Entity Recognizer
 ## REQUIREMENTS
 - pandas
 - pickle
