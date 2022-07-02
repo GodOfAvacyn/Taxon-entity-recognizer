@@ -1,24 +1,9 @@
 # Taxon Entity Recognizer
-## REQUIREMENTS
-- pandas
-- pickle
-- numpy
-- random
-- re
-- spacy
-- spacy trf
 
 ## DESCRIPTION
-This project is for recognizing taxonomic entities in scientific text. It trains on a combination of
-existing exerpts from scientific papers and synthetic data from combining taxonomies from a list and
-handwritten sentences.  
-The data currently is in the form of three pickle documents. Since the original, unprocessed dataset
-exceeds 100mb, it cannot be uploaded to github.
+This project is for recognizing taxonomic entities in scientific text. It currently uses the TaxoNERD library as its internal named entity recognizer. The main file inside is pdf_reader.py, which takes in a path to a pdf document and spits out the most commonly mentioned taxonomic names inside the docuemnt.
 
 ## USAGE
-The only interactable file is spacy_trainer.py. There are three supported command line arguments:
-- train:   trains the model and saves it to the parent folder. This will take some time.
-- test:   runs the model on a set of test data and displays accuracy parameters.
-- demo sentence_here:   displays all taxonomies from a sentence. "sentence_here" can be as long as needed.  
-Unfortunately, since the trained model exceeds 100mb, previously trained models cannot be uploaded to github.
-If training with a GPU, edit the 2nd line of the spacy_trainer.py file and un-comment "require.gpu()".
+The file pdf_reader.py is used like this:
+- python pdf_reader.py <PATH TO PDF DOCUMENT>
+The output will be a printed message inside the terminal of the most commonly referenced taxonomies.
